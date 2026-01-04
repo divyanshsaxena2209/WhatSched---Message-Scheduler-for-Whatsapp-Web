@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WhatSched</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>WhatSched</h2>
+
+      <label>Contact Name (Type to see suggestions):</label>
+      <input 
+        id="contact" 
+        type="text" 
+        list="contact-list" 
+        placeholder="Start typing name..." 
+        autocomplete="off" 
+      />
+
+      <datalist id="contact-list"></datalist>
+
+      <label>Message:</label>
+      <textarea id="message" placeholder="Type your message"></textarea>
+
+      <label>Send at (local):</label>
+      <input id="datetime" type="datetime-local" step="1" />
+
+      <div class="row">
+        <button id="scheduleBtn" class="primary">Schedule</button>
+        <button id="refreshBtn">Refresh</button>
+      </div>
+
+      <h3>Scheduled</h3>
+      <div id="list"></div>
+      
+      <div class="note">
+        Note: Suggestions show contacts currently visible in your WhatsApp sidebar.
+      </div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

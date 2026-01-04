@@ -1,0 +1,144 @@
+/* popup.css - VERSION 76.0 (Night Mode Green #37C572 & Light Mode #1B9A58) */
+:root {
+  --bg: #ffffff;
+  /* LIGHT MODE GREEN */
+  --accent: #1B9A58; 
+  --muted: #666;
+  --text: #111;
+  --border: #ddd;
+  --input-bg: #fff;
+  --btn-sec-bg: #f2f2f2;
+  --btn-sec-text: #333;
+  --danger: #e53e3e;
+}
+
+/* System Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #222e35;
+    /* NIGHT MODE GREEN */
+    --accent: #37C572; 
+    --muted: #8696a0;
+    --text: #e9edef;
+    --border: #374043;
+    --input-bg: #2a3942;
+    --btn-sec-bg: #374043;
+    --btn-sec-text: #e9edef;
+    --danger: #ef5350;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: var(--text);
+  width: 360px;
+}
+
+.container {
+  padding: 12px;
+}
+
+h2 {
+  margin: 4px 0 10px 0;
+  font-size: 16px;
+  color: var(--text);
+}
+
+label {
+  display: block;
+  font-size: 12px;
+  margin-top: 8px;
+  color: var(--muted);
+}
+
+input[type="text"], input[type="datetime-local"], textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  margin-top: 6px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 13px;
+  background: var(--input-bg);
+  color: var(--text);
+}
+
+/* Date Picker Icon Color Fix for Dark Mode */
+@media (prefers-color-scheme: dark) {
+  input[type="datetime-local"] {
+    color-scheme: dark;
+  }
+}
+
+textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button.primary {
+  background: var(--accent);
+  color: white;
+  flex: 1;
+}
+
+button:not(.primary) {
+  background: var(--btn-sec-bg);
+  color: var(--btn-sec-text);
+}
+
+#list {
+  margin-top: 8px;
+  max-height: 180px;
+  overflow: auto;
+  border-top: 1px dashed var(--border);
+  padding-top: 8px;
+}
+
+.scheduled-item {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  margin-bottom: 8px;
+  font-size: 13px;
+  background: var(--input-bg); /* Use input bg for items */
+}
+
+.scheduled-item strong {
+  color: var(--accent);
+}
+
+.scheduled-item .meta {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.delete-btn {
+  background: transparent;
+  color: var(--danger);
+  border: none;
+  float: right;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.note {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
